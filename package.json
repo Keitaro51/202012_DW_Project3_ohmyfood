@@ -1,0 +1,19 @@
+{
+  "name": "p3_charlot_romain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./css/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keitaro51/RomainCharlot_3_01122020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keitaro51/RomainCharlot_3_01122020/issues"
+  },
+  "homepage": "https://github.com/Keitaro51/RomainCharlot_3_01122020#readme"
+}
