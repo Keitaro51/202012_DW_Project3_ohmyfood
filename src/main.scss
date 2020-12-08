@@ -1,0 +1,114 @@
+/*----------Global makecss----------*/
+$primary:#9356DC;
+$secondary:#FF79DA;
+$tertary:#99E2D0;
+$grey:#F6F6F6;
+
+$titlefont:shrikhand;
+$textfont:Roboto;
+$iconfont:"Font Awesome 5 Free";
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding:0; 
+	font-family: $textfont, sans-serif;
+}
+/*--------------------Mobile design--------------------*/
+
+header{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	img{
+		height: 40px;
+	}
+	i{
+		font-size: 26px;
+		position:absolute;
+		left: 25px;
+		bottom: 7px;
+	}
+}
+
+.location{
+	background: #EAEAEA;
+	box-shadow: 0 1px 1px grey inset;
+	padding:10px 0 10px 0;
+	p{
+		text-align: center;	
+		&::before{
+			content:"\f3c5";
+			font-family: $iconfont;    /*DRY réfléchir à généraliser avec les autres icones*/
+			font-weight: 900;			/*DRY réfléchir à généraliser avec les autres icones*/
+			margin-right: 0.5rem;		/*DRY réfléchir à généraliser avec les autres icones*/
+		}	
+	}
+}
+
+.explore{
+	background: $grey;
+	padding: 20px 10% 20px 10%;
+	text-align: center;
+	h1, p, button{
+		margin-bottom: 10px;
+	}
+	button{
+		padding:10px;
+		background: linear-gradient(-10deg,$primary,$secondary);
+		color: white;
+		border:none;
+		box-shadow: 0 2px 5px grey;
+		border-radius: 20px;
+	}
+}
+
+.functioning{
+	margin:20px;
+	font-weight: 700;
+	h1{
+		margin-bottom: 20px;
+	}
+	i{
+		color: #7E7E7E;
+		margin: 0 10px 0 0;
+	}
+	p{
+		position: relative;
+		text-align: center;
+		height: 45px;
+		background: $grey;
+		border-radius: 18px;
+		box-shadow: 0 6px 13px lightgrey;
+		margin: 10px 5px 10px 5px;
+		line-height: 45px;
+		span{
+			line-height: 1;
+			position: absolute;
+			left: -5px;
+			top:11px;
+			font-weight: 400;
+			color:white;
+			background: $primary;
+			border:1px solid $primary;
+			border-radius: 50%;
+			padding: 2px 6px 2px 6px;	
+		}
+		&:hover{
+			background: #F5EDFF;
+			transition: background 1s;
+			i{
+				color:$primary;
+				transition:color 1s;
+			}
+		}
+	}
+}
+
+/*temporaire, pour réduire les images et ne pas avoir de débordement*/
+section{
+	& img{
+	width: 30%;
+	}
+}

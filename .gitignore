@@ -2,4 +2,9 @@
 maquettes/
 *.pdf
 *.txt
+*.log
+*.json
+gulpfile.js
+./maquettes
+node_modules
 

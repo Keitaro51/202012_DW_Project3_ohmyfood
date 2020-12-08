@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/*----------Global makecss----------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif; }
+
+/*--------------------Mobile design--------------------*/
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px; }
+  header img {
+    height: 40px; }
+  header i {
+    font-size: 26px;
+    position: absolute;
+    left: 25px;
+    bottom: 7px; }
+
+.location {
+  background: #EAEAEA;
+  box-shadow: 0 1px 1px grey inset;
+  padding: 10px 0 10px 0; }
+  .location p {
+    text-align: center; }
+    .location p::before {
+      content: "\f3c5";
+      font-family: "Font Awesome 5 Free";
+      /*DRY réfléchir à généraliser avec les autres icones*/
+      font-weight: 900;
+      /*DRY réfléchir à généraliser avec les autres icones*/
+      margin-right: 0.5rem;
+      /*DRY réfléchir à généraliser avec les autres icones*/ }
+
+.explore {
+  background: #F6F6F6;
+  padding: 20px 10% 20px 10%;
+  text-align: center; }
+  .explore h1, .explore p, .explore button {
+    margin-bottom: 10px; }
+  .explore button {
+    padding: 10px;
+    background: linear-gradient(-10deg, #9356DC, #FF79DA);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 5px grey;
+    border-radius: 20px; }
+
+.functioning {
+  margin: 20px;
+  font-weight: 700; }
+  .functioning h1 {
+    margin-bottom: 20px; }
+  .functioning i {
+    color: #7E7E7E;
+    margin: 0 10px 0 0; }
+  .functioning p {
+    position: relative;
+    text-align: center;
+    height: 45px;
+    background: #F6F6F6;
+    border-radius: 18px;
+    box-shadow: 0 6px 13px lightgrey;
+    margin: 10px 5px 10px 5px;
+    line-height: 45px; }
+    .functioning p span {
+      line-height: 1;
+      position: absolute;
+      left: -5px;
+      top: 11px;
+      font-weight: 400;
+      color: white;
+      background: #9356DC;
+      border: 1px solid #9356DC;
+      border-radius: 50%;
+      padding: 2px 6px 2px 6px; }
+    .functioning p:hover {
+      background: #F5EDFF;
+      transition: background 1s; }
+      .functioning p:hover i {
+        color: #9356DC;
+        transition: color 1s; }
+
+/*temporaire, pour réduire les images et ne pas avoir de débordement*/
+section img {
+  width: 30%; }

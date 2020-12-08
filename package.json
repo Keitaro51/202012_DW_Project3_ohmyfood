@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./css/main.scss:./css/style.css"
+    "watch": "node ./node_modules/gulp/bin/gulp.js watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Keitaro51/RomainCharlot_3_01122020/issues"
   },
-  "homepage": "https://github.com/Keitaro51/RomainCharlot_3_01122020#readme"
+  "homepage": "https://github.com/Keitaro51/RomainCharlot_3_01122020#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
+  }
 }
