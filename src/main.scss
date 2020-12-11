@@ -1,20 +1,39 @@
 /*----------Global makecss----------*/
 $primary:#9356DC;
 $secondary:#FF79DA;
-$tertary:#99E2D0;
+$tertiary:#99E2D0;
+$icon_color:#7E7E7E;
 $grey:#F6F6F6;
-
-$titlefont:shrikhand;
-$textfont:Roboto;
+$dish_label_height:65px;
 $iconfont:"Font Awesome 5 Free";
+/*--------------------Mobile design--------------------*/
 *{
 	box-sizing: border-box;
 	margin: 0;
 	padding:0; 
-	font-family: $textfont, sans-serif;
+	font-family: Roboto, sans-serif;
 }
-/*--------------------Mobile design--------------------*/
-
+button{
+	padding:10px;
+	background: linear-gradient(-10deg,$primary,$secondary);
+	color: white;
+	border:none;
+	box-shadow: 0 2px 5px grey;
+	border-radius: 20px;
+}
+.fa-heart{
+	color:$icon_color;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+img{
+	object-fit: cover;
+}
+h1{
+	font-size: 26px;
+}
 header{
 	position: relative;
 	display: flex;
@@ -22,7 +41,7 @@ header{
 	align-items: center;
 	margin: 20px;
 	img{
-		height: 40px;
+		height: 30px;
 	}
 	i{
 		font-size: 26px;
@@ -31,7 +50,6 @@ header{
 		bottom: 7px;
 	}
 }
-
 .location{
 	background: #EAEAEA;
 	box-shadow: 0 1px 1px grey inset;
@@ -40,13 +58,12 @@ header{
 		text-align: center;	
 		&::before{
 			content:"\f3c5";
-			font-family: $iconfont;    /*DRY réfléchir à généraliser avec les autres icones*/
-			font-weight: 900;			/*DRY réfléchir à généraliser avec les autres icones*/
-			margin-right: 0.5rem;		/*DRY réfléchir à généraliser avec les autres icones*/
+			font-family: $iconfont;
+			font-weight: 900;
+			margin-right: 0.5rem;
 		}	
 	}
 }
-
 .explore{
 	background: $grey;
 	padding: 20px 10% 20px 10%;
@@ -54,40 +71,41 @@ header{
 	h1, p, button{
 		margin-bottom: 10px;
 	}
-	button{
-		padding:10px;
-		background: linear-gradient(-10deg,$primary,$secondary);
-		color: white;
-		border:none;
-		box-shadow: 0 2px 5px grey;
-		border-radius: 20px;
-	}
 }
-
 .functioning{
-	margin:20px;
+	margin:40px 20px 50px 20px;
 	font-weight: 700;
 	h1{
 		margin-bottom: 20px;
 	}
-	i{
-		color: #7E7E7E;
-		margin: 0 10px 0 0;
-	}
 	p{
+		&:nth-of-type(n)::before{
+			font-family: $iconfont;
+			color:$icon_color;
+			margin-right: 10px;
+		}
+		&:nth-of-type(1)::before{
+			content:"\f3cd";		
+		}
+		&:nth-of-type(2)::before{
+			content:"\f0ca";			
+		}
+		&:nth-of-type(3)::before{
+			content:"\f54e";
+		}
 		position: relative;
 		text-align: center;
 		height: 45px;
 		background: $grey;
 		border-radius: 18px;
 		box-shadow: 0 6px 13px lightgrey;
-		margin: 10px 5px 10px 5px;
+		margin: 20px 5px 10px 5px;
 		line-height: 45px;
 		span{
 			line-height: 1;
 			position: absolute;
 			left: -5px;
-			top:11px;
+			top:12px;
 			font-weight: 400;
 			color:white;
 			background: $primary;
@@ -98,17 +116,147 @@ header{
 		&:hover{
 			background: #F5EDFF;
 			transition: background 1s;
-			i{
+			&::before{
 				color:$primary;
 				transition:color 1s;
 			}
 		}
 	}
 }
+.restaurants{
+	background: $grey;
+	h1{
+		padding: 20px 0 0 20px;
+		margin:0 0 20px 0;
+	}
+}
+.card{
+	position: relative;
+	width: 90%;
+	margin: 20px;
+	background: white;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	box-shadow: 0 6px 13px lightgrey;
+	img{
+		border-radius: 15px 15px 0 0;
+		width:100%;
+		height:170px;
+	}
+	i{
+		position:absolute;
+		font-size: 25px;
+		color: $icon_color;
+		bottom:25px;
+		right: 30px;
+	}
+}
+.new{
+	background: $tertiary;
+	font-size: 10px;
+	font-weight: bold;
+	color:#008766;
+	padding: 6px;
+	border-radius: 5px;
+	position: absolute;
+	top:10px;
+	right: 10px;
+}
+.rest_description{
+	padding: 5px 10px 10px 10px;
+	p, h2{
+		font-size: 16px;
+	}
+}
+footer{
+	background: #353535;
+	padding-bottom: 30px;
+	h2{
+		font-family: shrikhand, sans-serif;
+		color: white;
+		font-weight: 100;
+		margin: 0 0 20px 20px;
+		padding-top: 20px;
+	}
+	a{
+		display: block;
+		color: white;
+		margin: 8px 0 0 20px;
+	}
+}
 
-/*temporaire, pour réduire les images et ne pas avoir de débordement*/
-section{
-	& img{
-	width: 30%;
+/*-----Menu1 - La palette du gôut-----*/
+#main_menu{
+	
+	.hero img{
+		width:100%;
+		height:300px;
+		position: fixed;
+		top: 70px;	
+	}
+	.menu{
+		position: absolute;
+		top:300px;
+		width: 100%;
+		background: $grey;
+		border-radius: 20px 20px 0 0;
+	}
+	h1{
+		font-family: shrikhand, sans-serif;
+		margin: 10px 20px 10px 20px;
+		&::after{
+			content:"\f004";
+			color:$icon_color;
+			font-weight: 400; /*bold 700 for full heart*/
+			font-family:$iconfont;
+			padding-left: 15%; /*% or px?*/
+		}
+	}
+	
+	.underline{
+		border-bottom: $tertiary solid 4px; /*partial title underline*/
+	}
+	h2{
+		font-weight: normal;
+		margin: 20px;
+	}
+	article{
+		background: white;
+		border-radius: 20px;
+		box-shadow: 0 6px 13px lightgrey;
+		width: 90%;
+		height: $dish_label_height;
+		margin:20px auto 20px auto ;
+		
+		display: flex;
+		justify-content: flex-end;
+		h3{
+			flex-grow:1;
+			padding:10px 10px 10px 10px
+		
+		}
+		.dish_compo{
+			font-weight: 400;
+		}
+		.price{
+			float:right;
+			padding-right: 10px;
+		}
+		i{
+			background:$tertiary;
+			height: $dish_label_height;
+			width: 50px;
+			border-radius: 0 20px 20px 0;
+			font-size: 25px;
+			color: white;
+			text-align: center;
+			line-height: $dish_label_height;
+		}
+	}
+	button{
+		padding: 10px 15px 10px 15px;
+		
 	}
 }

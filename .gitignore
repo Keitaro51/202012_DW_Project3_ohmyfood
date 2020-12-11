@@ -5,6 +5,5 @@ maquettes/
 *.log
 *.json
 gulpfile.js
-./maquettes
 node_modules
 

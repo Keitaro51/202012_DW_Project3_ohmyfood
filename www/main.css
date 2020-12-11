@@ -1,12 +1,34 @@
 @charset "UTF-8";
 /*----------Global makecss----------*/
+/*--------------------Mobile design--------------------*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Roboto, sans-serif; }
 
-/*--------------------Mobile design--------------------*/
+button {
+  padding: 10px;
+  background: linear-gradient(-10deg, #9356DC, #FF79DA);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 5px grey;
+  border-radius: 20px; }
+
+.fa-heart {
+  color: #7E7E7E; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+img {
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+h1 {
+  font-size: 26px; }
+
 header {
   position: relative;
   display: flex;
@@ -14,7 +36,7 @@ header {
   align-items: center;
   margin: 20px; }
   header img {
-    height: 40px; }
+    height: 30px; }
   header i {
     font-size: 26px;
     position: absolute;
@@ -30,11 +52,8 @@ header {
     .location p::before {
       content: "\f3c5";
       font-family: "Font Awesome 5 Free";
-      /*DRY réfléchir à généraliser avec les autres icones*/
       font-weight: 900;
-      /*DRY réfléchir à généraliser avec les autres icones*/
-      margin-right: 0.5rem;
-      /*DRY réfléchir à généraliser avec les autres icones*/ }
+      margin-right: 0.5rem; }
 
 .explore {
   background: #F6F6F6;
@@ -42,22 +61,12 @@ header {
   text-align: center; }
   .explore h1, .explore p, .explore button {
     margin-bottom: 10px; }
-  .explore button {
-    padding: 10px;
-    background: linear-gradient(-10deg, #9356DC, #FF79DA);
-    color: white;
-    border: none;
-    box-shadow: 0 2px 5px grey;
-    border-radius: 20px; }
 
 .functioning {
-  margin: 20px;
+  margin: 40px 20px 50px 20px;
   font-weight: 700; }
   .functioning h1 {
     margin-bottom: 20px; }
-  .functioning i {
-    color: #7E7E7E;
-    margin: 0 10px 0 0; }
   .functioning p {
     position: relative;
     text-align: center;
@@ -65,13 +74,23 @@ header {
     background: #F6F6F6;
     border-radius: 18px;
     box-shadow: 0 6px 13px lightgrey;
-    margin: 10px 5px 10px 5px;
+    margin: 20px 5px 10px 5px;
     line-height: 45px; }
+    .functioning p:nth-of-type(n)::before {
+      font-family: "Font Awesome 5 Free";
+      color: #7E7E7E;
+      margin-right: 10px; }
+    .functioning p:nth-of-type(1)::before {
+      content: "\f3cd"; }
+    .functioning p:nth-of-type(2)::before {
+      content: "\f0ca"; }
+    .functioning p:nth-of-type(3)::before {
+      content: "\f54e"; }
     .functioning p span {
       line-height: 1;
       position: absolute;
       left: -5px;
-      top: 11px;
+      top: 12px;
       font-weight: 400;
       color: white;
       background: #9356DC;
@@ -81,10 +100,127 @@ header {
     .functioning p:hover {
       background: #F5EDFF;
       transition: background 1s; }
-      .functioning p:hover i {
+      .functioning p:hover::before {
         color: #9356DC;
         transition: color 1s; }
 
-/*temporaire, pour réduire les images et ne pas avoir de débordement*/
-section img {
-  width: 30%; }
+.restaurants {
+  background: #F6F6F6; }
+  .restaurants h1 {
+    padding: 20px 0 0 20px;
+    margin: 0 0 20px 0; }
+
+.card {
+  position: relative;
+  width: 90%;
+  margin: 20px;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 6px 13px lightgrey; }
+  .card img {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: 170px; }
+  .card i {
+    position: absolute;
+    font-size: 25px;
+    color: #7E7E7E;
+    bottom: 25px;
+    right: 30px; }
+
+.new {
+  background: #99E2D0;
+  font-size: 10px;
+  font-weight: bold;
+  color: #008766;
+  padding: 6px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+
+.rest_description {
+  padding: 5px 10px 10px 10px; }
+  .rest_description p, .rest_description h2 {
+    font-size: 16px; }
+
+footer {
+  background: #353535;
+  padding-bottom: 30px; }
+  footer h2 {
+    font-family: shrikhand, sans-serif;
+    color: white;
+    font-weight: 100;
+    margin: 0 0 20px 20px;
+    padding-top: 20px; }
+  footer a {
+    display: block;
+    color: white;
+    margin: 8px 0 0 20px; }
+
+/*-----Menu1 - La palette du gôut-----*/
+#main_menu .hero img {
+  width: 100%;
+  height: 300px;
+  position: fixed;
+  top: 70px; }
+
+#main_menu .menu {
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  background: #F6F6F6;
+  border-radius: 20px 20px 0 0; }
+
+#main_menu h1 {
+  font-family: shrikhand, sans-serif;
+  margin: 10px 20px 10px 20px; }
+  #main_menu h1::after {
+    content: "\f004";
+    color: #7E7E7E;
+    font-weight: 400;
+    /*bold 700 for full heart*/
+    font-family: "Font Awesome 5 Free";
+    padding-left: 15%;
+    /*% or px?*/ }
+
+#main_menu .underline {
+  border-bottom: #99E2D0 solid 4px;
+  /*partial title underline*/ }
+
+#main_menu h2 {
+  font-weight: normal;
+  margin: 20px; }
+
+#main_menu article {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 13px lightgrey;
+  width: 90%;
+  height: 65px;
+  margin: 20px auto 20px auto;
+  display: flex;
+  justify-content: flex-end; }
+  #main_menu article h3 {
+    flex-grow: 1;
+    padding: 10px 10px 10px 10px; }
+  #main_menu article .dish_compo {
+    font-weight: 400; }
+  #main_menu article .price {
+    float: right;
+    padding-right: 10px; }
+  #main_menu article i {
+    background: #99E2D0;
+    height: 65px;
+    width: 50px;
+    border-radius: 0 20px 20px 0;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    line-height: 65px; }
+
+#main_menu button {
+  padding: 10px 15px 10px 15px; }
