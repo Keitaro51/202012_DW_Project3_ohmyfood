@@ -14,12 +14,13 @@ $iconfont:"Font Awesome 5 Free";
 	font-family: Roboto, sans-serif;
 }
 button{
-	padding:10px;
+	padding:14px 18px;
 	background: linear-gradient(-10deg,$primary,$secondary);
 	color: white;
 	border:none;
 	box-shadow: 0 2px 5px grey;
-	border-radius: 20px;
+	border-radius: 25px;
+	font-size: 20px;
 }
 .fa-heart{
 	color:$icon_color;
@@ -69,7 +70,7 @@ header{
 	padding: 20px 10% 20px 10%;
 	text-align: center;
 	h1, p, button{
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 }
 .functioning{
@@ -104,7 +105,7 @@ header{
 		span{
 			line-height: 1;
 			position: absolute;
-			left: -5px;
+			left: -10px;
 			top:12px;
 			font-weight: 400;
 			color:white;
@@ -193,11 +194,11 @@ footer{
 	.hero img{
 		width:100%;
 		height:300px;
-		position: fixed;
+		/*position: fixed; *//*problème de footer avec et sans position fixed*/
 		top: 70px;	
 	}
 	.menu{
-		position: absolute;
+		position: absolute; /*probleme de superposition quand inactif, probleme de footer quand actif*/
 		top:300px;
 		width: 100%;
 		background: $grey;
@@ -205,6 +206,7 @@ footer{
 	}
 	h1{
 		font-family: shrikhand, sans-serif;
+		font-weight: normal;
 		margin: 10px 20px 10px 20px;
 		&::after{
 			content:"\f004";
@@ -229,34 +231,53 @@ footer{
 		width: 90%;
 		height: $dish_label_height;
 		margin:20px auto 20px auto ;
-		
 		display: flex;
 		justify-content: flex-end;
 		h3{
 			flex-grow:1;
-			padding:10px 10px 10px 10px
-		
+			padding:10px 10px 10px 10px;
+			white-space: nowrap;
+  			overflow: hidden;
+			text-overflow : ellipsis;
+			
 		}
 		.dish_compo{
 			font-weight: 400;
+			font-size: 15px;
 		}
 		.price{
-			float:right;
+			font-size: 15px;
+			font-weight: bold;
 			padding-right: 10px;
+			line-height: 6;
 		}
-		i{
+		.check_icone{
 			background:$tertiary;
 			height: $dish_label_height;
-			width: 50px;
 			border-radius: 0 20px 20px 0;
-			font-size: 25px;
-			color: white;
-			text-align: center;
-			line-height: $dish_label_height;
+			width: 0;
+			transition: width 1s;
+			i{
+				font-size: 0;
+				color: white;
+				margin-left: 25px;
+				line-height: $dish_label_height;
+				transition: font-size 1s;
+			}
+		}
+		&:hover {
+			.check_icone{
+				width:75px;
+				transition: width 1s;
+				i{
+					transform: rotate(2turn);
+					font-size: 25px;
+					transition: transform 1s, font-size 1s;
+				}
+			}
 		}
 	}
 	button{
 		padding: 10px 15px 10px 15px;
-		
 	}
 }

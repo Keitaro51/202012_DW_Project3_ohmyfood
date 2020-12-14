@@ -8,12 +8,13 @@
   font-family: Roboto, sans-serif; }
 
 button {
-  padding: 10px;
+  padding: 14px 18px;
   background: linear-gradient(-10deg, #9356DC, #FF79DA);
   color: white;
   border: none;
   box-shadow: 0 2px 5px grey;
-  border-radius: 20px; }
+  border-radius: 25px;
+  font-size: 20px; }
 
 .fa-heart {
   color: #7E7E7E; }
@@ -60,7 +61,7 @@ header {
   padding: 20px 10% 20px 10%;
   text-align: center; }
   .explore h1, .explore p, .explore button {
-    margin-bottom: 10px; }
+    margin-bottom: 20px; }
 
 .functioning {
   margin: 40px 20px 50px 20px;
@@ -89,7 +90,7 @@ header {
     .functioning p span {
       line-height: 1;
       position: absolute;
-      left: -5px;
+      left: -10px;
       top: 12px;
       font-weight: 400;
       color: white;
@@ -165,11 +166,13 @@ footer {
 #main_menu .hero img {
   width: 100%;
   height: 300px;
-  position: fixed;
+  /*position: fixed; */
+  /*problème de footer avec et sans position fixed*/
   top: 70px; }
 
 #main_menu .menu {
   position: absolute;
+  /*probleme de superposition quand inactif, probleme de footer quand actif*/
   top: 300px;
   width: 100%;
   background: #F6F6F6;
@@ -177,6 +180,7 @@ footer {
 
 #main_menu h1 {
   font-family: shrikhand, sans-serif;
+  font-weight: normal;
   margin: 10px 20px 10px 20px; }
   #main_menu h1::after {
     content: "\f004";
@@ -206,21 +210,37 @@ footer {
   justify-content: flex-end; }
   #main_menu article h3 {
     flex-grow: 1;
-    padding: 10px 10px 10px 10px; }
+    padding: 10px 10px 10px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   #main_menu article .dish_compo {
-    font-weight: 400; }
+    font-weight: 400;
+    font-size: 15px; }
   #main_menu article .price {
-    float: right;
-    padding-right: 10px; }
-  #main_menu article i {
+    font-size: 15px;
+    font-weight: bold;
+    padding-right: 10px;
+    line-height: 6; }
+  #main_menu article .check_icone {
     background: #99E2D0;
     height: 65px;
-    width: 50px;
     border-radius: 0 20px 20px 0;
-    font-size: 25px;
-    color: white;
-    text-align: center;
-    line-height: 65px; }
+    width: 0;
+    transition: width 1s; }
+    #main_menu article .check_icone i {
+      font-size: 0;
+      color: white;
+      margin-left: 25px;
+      line-height: 65px;
+      transition: font-size 1s; }
+  #main_menu article:hover .check_icone {
+    width: 75px;
+    transition: width 1s; }
+    #main_menu article:hover .check_icone i {
+      transform: rotate(2turn);
+      font-size: 25px;
+      transition: transform 1s, font-size 1s; }
 
 #main_menu button {
   padding: 10px 15px 10px 15px; }
