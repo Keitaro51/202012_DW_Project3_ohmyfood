@@ -281,3 +281,71 @@ footer{
 		padding: 10px 15px 10px 15px;
 	}
 }
+
+/*-----------------Loading spinner test----------------*/
+.loading{
+	position: relative;
+	width: 100%;
+	height: 800px;
+	background: linear-gradient(45deg,$primary, $secondary);
+	opacity: 0.7;
+	.fork{
+		position: absolute;
+		top:200px;
+		left:100px;
+		opacity: 0;
+	}
+	.knife{
+		position: absolute;
+		top:200px;
+		left:225px;
+		opacity: 0;
+	}
+	.splash{
+		position: absolute;
+		top: 245px;
+		left:170px;
+		transform: scale(0);
+	}
+	.plate{
+		position: absolute;
+		top:200px;
+		left:122px;	
+		transform: rotate(0) scale(0);
+	}
+	.logo{
+		position: absolute;
+		top:245px;
+		left:145px;
+		height:10px;
+		transform: rotate(0) scale(0) translateY(0);
+	}
+	.spin{
+		background: white;
+		color: red;
+	}
+	.spin:hover ~{
+		.logo{
+			transform: rotate(5turn) scale(1) translateY(-15px);
+			transition: transform 4s;
+		}	
+		.plate{
+			transform: rotate(5turn) scale(1);
+			transition: transform 4s;
+		}
+		.fork{
+			opacity: 1;
+			transform: translateX(60px) translateY(-30px) scale(2) rotate(45deg);
+			transition: opacity 1s, transform 1s;
+		}	
+		.knife{
+			opacity: 1;
+			transform: translateX(-60px) translateY(-30px) scale(2) rotate(-45deg);
+			transition: opacity 1s, transform 1s;
+		}
+		.splash{
+			transform: scale(1);
+			transition: transform 0s 5s;
+		}
+	}
+}
