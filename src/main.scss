@@ -55,14 +55,20 @@ header{
 	background: #EAEAEA;
 	box-shadow: 0 1px 1px grey inset;
 	padding:10px 0 10px 0;
-	p{
+	text-align: center;	
+	input{
+		border: none;
+		background: #EAEAEA;
 		text-align: center;	
-		&::before{
-			content:"\f3c5";
-			font-family: $iconfont;
-			font-weight: 900;
-			margin-right: 0.5rem;
-		}	
+		&:focus{
+			background: white;
+		}
+	}
+	&::before{
+		content:"\f3c5";
+		font-family: $iconfont;
+		font-weight: 900;
+		margin-right: 0.5rem;
 	}
 }
 .explore{
@@ -150,8 +156,13 @@ header{
 		position:absolute;
 		font-size: 25px;
 		color: $icon_color;
-		bottom:25px;
+		bottom:15px;
 		right: 30px;
+		&:hover{
+			font-weight: 700;
+			color: $secondary;
+			transition: all 10s;
+		}
 	}
 }
 .new{
@@ -160,7 +171,7 @@ header{
 	font-weight: bold;
 	color:#008766;
 	padding: 6px;
-	border-radius: 5px;
+	border-radius: 3px;
 	position: absolute;
 	top:10px;
 	right: 10px;
@@ -190,7 +201,6 @@ footer{
 
 /*-----Menu1 - La palette du gôut-----*/
 #main_menu{
-	
 	.hero img{
 		width:100%;
 		height:300px;
@@ -250,16 +260,15 @@ footer{
 			font-size: 15px;
 			font-weight: bold;
 			padding-right: 10px;
-			line-height: 6;
-			
+			line-height: 6;	
 		}
 		.check_icone{
 			background:$tertiary;
 			height: $dish_label_height;
-			min-width:75px;
+			/*min-width:75px;*/
 			border-radius: 0 20px 20px 0;
-			transform: translateX(175px);
-			transition: transform 1s;
+			width: 0; /*transform: translateX(175px)?*/
+			transition: width 1s;/*transform?*/
 			i{
 				font-size: 25px;
 				color: white;
@@ -270,8 +279,8 @@ footer{
 		}
 		&:hover {
 			.check_icone{
-				transform: translateX(0);
-				transition: transform 1s;
+				width: 75px;/*transform: translateX(0)?*/
+				transition: width 1s; /*transform?*/
 				i{
 					transform: rotate(2turn);
 					transition: transform 1s;
