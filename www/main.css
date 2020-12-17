@@ -7,6 +7,9 @@
   padding: 0;
   font-family: Roboto, sans-serif; }
 
+i {
+  color: #7E7E7E; }
+
 button {
   padding: 14px 18px;
   background: linear-gradient(-10deg, #9356DC, #FF79DA);
@@ -15,6 +18,9 @@ button {
   box-shadow: 0 2px 5px grey;
   border-radius: 25px;
   font-size: 20px; }
+  button:hover {
+    background: linear-gradient(-10deg, #a16be0, #ff93e1);
+    box-shadow: 0 2px 5px #1a1a1a; }
 
 .fa-heart {
   color: #7E7E7E; }
@@ -75,23 +81,12 @@ header {
     margin-bottom: 20px; }
   .functioning p {
     position: relative;
-    text-align: center;
     height: 45px;
     background: #F6F6F6;
     border-radius: 18px;
     box-shadow: 0 6px 13px lightgrey;
     margin: 20px 5px 10px 5px;
     line-height: 45px; }
-    .functioning p:nth-of-type(n)::before {
-      font-family: "Font Awesome 5 Free";
-      color: #7E7E7E;
-      margin-right: 10px; }
-    .functioning p:nth-of-type(1)::before {
-      content: "\f3cd"; }
-    .functioning p:nth-of-type(2)::before {
-      content: "\f0ca"; }
-    .functioning p:nth-of-type(3)::before {
-      content: "\f54e"; }
     .functioning p span {
       line-height: 1;
       position: absolute;
@@ -103,10 +98,13 @@ header {
       border: 1px solid #9356DC;
       border-radius: 50%;
       padding: 2px 6px 2px 6px; }
+    .functioning p i {
+      width: 20px;
+      margin: 0 15px 0 35px; }
     .functioning p:hover {
       background: #F5EDFF;
       transition: background 1s; }
-      .functioning p:hover::before {
+      .functioning p:hover i {
         color: #9356DC;
         transition: color 1s; }
 
@@ -133,7 +131,6 @@ header {
   .card i {
     position: absolute;
     font-size: 25px;
-    color: #7E7E7E;
     bottom: 15px;
     right: 30px; }
     .card i:hover {
@@ -170,6 +167,9 @@ footer {
     display: block;
     color: white;
     margin: 8px 0 0 20px; }
+  footer i {
+    color: white;
+    width: 20px; }
 
 /*-----Menu1 - La palette du gôut-----*/
 #main_menu .hero img {

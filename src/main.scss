@@ -1,6 +1,8 @@
 /*----------Global makecss----------*/
 $primary:#9356DC;
+$primary_light:lighten($primary,5%);
 $secondary:#FF79DA;
+$secondary_light:lighten($secondary,5%);
 $tertiary:#99E2D0;
 $icon_color:#7E7E7E;
 $grey:#F6F6F6;
@@ -13,6 +15,9 @@ $iconfont:"Font Awesome 5 Free";
 	padding:0; 
 	font-family: Roboto, sans-serif;
 }
+i{
+	color: $icon_color;
+}
 button{
 	padding:14px 18px;
 	background: linear-gradient(-10deg,$primary,$secondary);
@@ -21,6 +26,11 @@ button{
 	box-shadow: 0 2px 5px grey;
 	border-radius: 25px;
 	font-size: 20px;
+	&:hover{
+		background: linear-gradient(-10deg,$primary_light,$secondary_light);
+		box-shadow:0 2px 5px darken(grey, 40%);
+	}
+	
 }
 .fa-heart{
 	color:$icon_color;
@@ -86,22 +96,7 @@ header{
 		margin-bottom: 20px;
 	}
 	p{
-		&:nth-of-type(n)::before{
-			font-family: $iconfont;
-			color:$icon_color;
-			margin-right: 10px;
-		}
-		&:nth-of-type(1)::before{
-			content:"\f3cd";		
-		}
-		&:nth-of-type(2)::before{
-			content:"\f0ca";			
-		}
-		&:nth-of-type(3)::before{
-			content:"\f54e";
-		}
 		position: relative;
-		text-align: center;
 		height: 45px;
 		background: $grey;
 		border-radius: 18px;
@@ -120,10 +115,14 @@ header{
 			border-radius: 50%;
 			padding: 2px 6px 2px 6px;	
 		}
+		i{
+			width: 20px;
+			margin:0 15px 0 35px;
+		}
 		&:hover{
 			background: #F5EDFF;
 			transition: background 1s;
-			&::before{
+			i{
 				color:$primary;
 				transition:color 1s;
 			}
@@ -155,7 +154,6 @@ header{
 	i{
 		position:absolute;
 		font-size: 25px;
-		color: $icon_color;
 		bottom:15px;
 		right: 30px;
 		&:hover{
@@ -196,6 +194,10 @@ footer{
 		display: block;
 		color: white;
 		margin: 8px 0 0 20px;
+	}
+	i{
+		color: white;
+		width: 20px;
 	}
 }
 
