@@ -172,33 +172,35 @@ footer {
     width: 20px; }
 
 /*-----Menu1 - La palette du gôut-----*/
-#main_menu .hero img {
-  width: 100%;
+#main_menu .hero {
   height: 300px;
-  /*position: fixed; */
-  /*problème de footer avec et sans position fixed*/
-  top: 70px; }
+  background-size: cover; }
+  #main_menu .hero_menu1 {
+    background-image: url("images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"); }
 
 #main_menu .menu {
-  position: absolute;
-  /*probleme de superposition quand inactif, probleme de footer quand actif*/
-  top: 300px;
+  margin-top: -30px;
   width: 100%;
   background: #F6F6F6;
-  border-radius: 20px 20px 0 0; }
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column; }
+  #main_menu .menu button {
+    margin: 50px auto 50px auto; }
 
 #main_menu h1 {
   font-family: shrikhand, sans-serif;
   font-weight: normal;
-  margin: 10px 20px 10px 20px; }
-  #main_menu h1::after {
-    content: "\f004";
-    color: #7E7E7E;
-    font-weight: 400;
-    /*bold 700 for full heart*/
-    font-family: "Font Awesome 5 Free";
-    padding-left: 15%;
-    /*% or px?*/ }
+  width: 90%;
+  margin: 0 20px 10px 20px;
+  padding-top: 30px;
+  /*&::after{
+			content:"\f004";
+			color:$icon_color;
+			font-weight: 400;
+			font-family:$iconfont;
+			padding-left: 15%;
+		}*/ }
 
 #main_menu .underline {
   border-bottom: #99E2D0 solid 4px;
@@ -212,9 +214,8 @@ footer {
   background: white;
   border-radius: 20px;
   box-shadow: 0 6px 13px lightgrey;
-  width: 90%;
   height: 65px;
-  margin: 20px auto 20px auto;
+  margin: 20px;
   display: flex;
   overflow: hidden; }
   #main_menu article h3 {
