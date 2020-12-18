@@ -246,55 +246,87 @@ footer {
   padding: 10px 15px 10px 15px; }
 
 /*-----------------Loading spinner test----------------*/
-.loading {
-  position: relative;
+#spin {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  background: white;
+  /*linear-gradient(45deg,$primary, $secondary)*/
+  opacity: 1;
+  /*à ajuster après finalisation animation*/
+  color: red;
   width: 100%;
-  height: 800px;
-  background: linear-gradient(45deg, #9356DC, #FF79DA);
-  opacity: 0.7; }
-  .loading .fork {
+  height: 100vh;
+  -webkit-animation: loading_spinner 5s both;
+  animation: loading_spinner 5s both; }
+
+@-webkit-keyframes loading_spinner {
+  to {
+    .logo {
+      transform: rotate(5turn) scale(1) translateY(-15px);
+      transition: transform 4s; }
+    .plate {
+      transform: rotate(5turn) scale(1);
+      transition: transform 4s; }
+    .fork {
+      opacity: 1;
+      transform: translateX(60px) translateY(-30px) scale(2) rotate(45deg);
+      transition: opacity 1s, transform 1s; }
+    .knife {
+      opacity: 1;
+      transform: translateX(-60px) translateY(-30px) scale(2) rotate(-45deg);
+      transition: opacity 1s, transform 1s; }
+    .splash {
+      transform: scale(1);
+      transition: transform 0s 5s; } } }
+
+@keyframes loading_spinner {
+  to {
+    .logo {
+      transform: rotate(5turn) scale(1) translateY(-15px);
+      transition: transform 4s; }
+    .plate {
+      transform: rotate(5turn) scale(1);
+      transition: transform 4s; }
+    .fork {
+      opacity: 1;
+      transform: translateX(60px) translateY(-30px) scale(2) rotate(45deg);
+      transition: opacity 1s, transform 1s; }
+    .knife {
+      opacity: 1;
+      transform: translateX(-60px) translateY(-30px) scale(2) rotate(-45deg);
+      transition: opacity 1s, transform 1s; }
+    .splash {
+      transform: scale(1);
+      transition: transform 0s 5s; } } }
+  #spin .fork {
     position: absolute;
     top: 200px;
     left: 100px;
-    opacity: 0; }
-  .loading .knife {
+    opacity: 1;
+    /*à remettre à zéro après finalisation animation*/ }
+  #spin .knife {
     position: absolute;
     top: 200px;
     left: 225px;
-    opacity: 0; }
-  .loading .splash {
+    opacity: 1;
+    /*à remettre à zéro après finalisation animation*/ }
+  #spin .splash {
     position: absolute;
     top: 245px;
     left: 170px;
-    transform: scale(0); }
-  .loading .plate {
+    transform: scale(1);
+    /*scale à remettre à zéro après finalisation animation*/ }
+  #spin .plate {
     position: absolute;
     top: 200px;
     left: 122px;
-    transform: rotate(0) scale(0); }
-  .loading .logo {
+    transform: rotate(0) scale(1);
+    /*scale à remettre à zéro après finalisation animation*/ }
+  #spin .logo {
     position: absolute;
     top: 245px;
     left: 145px;
     height: 10px;
-    transform: rotate(0) scale(0) translateY(0); }
-  .loading .spin {
-    background: white;
-    color: red; }
-  .loading .spin:hover ~ .logo {
-    transform: rotate(5turn) scale(1) translateY(-15px);
-    transition: transform 4s; }
-  .loading .spin:hover ~ .plate {
-    transform: rotate(5turn) scale(1);
-    transition: transform 4s; }
-  .loading .spin:hover ~ .fork {
-    opacity: 1;
-    transform: translateX(60px) translateY(-30px) scale(2) rotate(45deg);
-    transition: opacity 1s, transform 1s; }
-  .loading .spin:hover ~ .knife {
-    opacity: 1;
-    transform: translateX(-60px) translateY(-30px) scale(2) rotate(-45deg);
-    transition: opacity 1s, transform 1s; }
-  .loading .spin:hover ~ .splash {
-    transform: scale(1);
-    transition: transform 0s 5s; }
+    transform: rotate(0) scale(1) translateY(0);
+    /*scale à remettre à zéro après finalisation animation*/ }
