@@ -254,5 +254,19 @@ footer {
       transform: rotate(2turn);
       transition: transform 1s; }
 
+@-webkit-keyframes anime_menu {
+  from {
+    opacity: 0;
+    transform: translateY(30px); } }
+
+@keyframes anime_menu {
+  from {
+    opacity: 0;
+    transform: translateY(30px); } }
+
+#main_menu article, #main_menu h2 {
+  -webkit-animation: anime_menu 4s 1s backwards;
+  animation: anime_menu 4s 1s backwards; }
+
 #main_menu button {
   padding: 10px 15px 10px 15px; }
