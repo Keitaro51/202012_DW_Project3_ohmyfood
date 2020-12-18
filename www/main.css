@@ -21,7 +21,6 @@ i {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    /*voir compatibilité*/
     opacity: 1;
     transition: opacity 3s; }
 
@@ -107,7 +106,6 @@ header {
       font-weight: 400;
       color: white;
       background: #9356DC;
-      border: 1px solid #9356DC;
       border-radius: 50%;
       padding: 2px 6px 2px 6px; }
     .functioning p i {
@@ -253,6 +251,36 @@ footer {
     #main_menu article:hover .check_icone i {
       transform: rotate(2turn);
       transition: transform 1s; }
+
+@-webkit-keyframes anime_menu {
+  from {
+    opacity: 0;
+    transform: translateY(30px); } }
+
+@keyframes anime_menu {
+  from {
+    opacity: 0;
+    transform: translateY(30px); } }
+
+#main_menu .anim, #main_menu h2 {
+  -webkit-animation: anime_menu 2s both;
+  animation: anime_menu 2s both;
+  /*avaible only if 4 dish max in each section - please adapt if more*/ }
+  #main_menu .anim0, #main_menu h20 {
+    -webkit-animation-delay: 0ms;
+    animation-delay: 0ms; }
+  #main_menu .anim1, #main_menu h21 {
+    -webkit-animation-delay: 400ms;
+    animation-delay: 400ms; }
+  #main_menu .anim2, #main_menu h22 {
+    -webkit-animation-delay: 800ms;
+    animation-delay: 800ms; }
+  #main_menu .anim3, #main_menu h23 {
+    -webkit-animation-delay: 1200ms;
+    animation-delay: 1200ms; }
+  #main_menu .anim4, #main_menu h24 {
+    -webkit-animation-delay: 1600ms;
+    animation-delay: 1600ms; }
 
 #main_menu button {
   padding: 10px 15px 10px 15px; }
