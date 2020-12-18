@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*----------Global makecss----------*/
+/*grey icon*/
 /*--------------------Mobile design--------------------*/
 * {
   box-sizing: border-box;
@@ -9,6 +10,20 @@
 
 i {
   color: #7E7E7E; }
+
+.fa-heart {
+  color: black;
+  cursor: pointer;
+  opacity: 0.3; }
+  .fa-heart:hover {
+    font-weight: 700;
+    background: linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*voir compatibilité*/
+    opacity: 1;
+    transition: opacity 3s; }
 
 button {
   padding: 14px 18px;
@@ -21,9 +36,6 @@ button {
   button:hover {
     background: linear-gradient(-10deg, #a16be0, #ff93e1);
     box-shadow: 0 2px 5px #1a1a1a; }
-
-.fa-heart {
-  color: #7E7E7E; }
 
 a {
   text-decoration: none;
@@ -116,7 +128,6 @@ header {
 
 .card {
   position: relative;
-  width: 90%;
   margin: 20px;
   background: white;
   border-radius: 15px;
@@ -133,10 +144,6 @@ header {
     font-size: 25px;
     bottom: 15px;
     right: 30px; }
-    .card i:hover {
-      font-weight: 700;
-      color: #FF79DA;
-      transition: all 10s; }
 
 .new {
   background: #99E2D0;
@@ -193,14 +200,10 @@ footer {
   font-weight: normal;
   width: 90%;
   margin: 0 20px 10px 20px;
-  padding-top: 30px;
-  /*&::after{
-			content:"\f004";
-			color:$icon_color;
-			font-weight: 400;
-			font-family:$iconfont;
-			padding-left: 15%;
-		}*/ }
+  padding-top: 30px; }
+  #main_menu h1 i {
+    float: right;
+    line-height: 38px; }
 
 #main_menu .underline {
   border-bottom: #99E2D0 solid 4px;
@@ -235,12 +238,9 @@ footer {
   #main_menu article .check_icone {
     background: #99E2D0;
     height: 65px;
-    /*min-width:75px;*/
     border-radius: 0 20px 20px 0;
     width: 0;
-    /*transform: translateX(175px)?*/
-    transition: width 1s;
-    /*transform?*/ }
+    transition: width 1s; }
     #main_menu article .check_icone i {
       font-size: 25px;
       color: white;
@@ -249,9 +249,7 @@ footer {
       transition: font-size 1s; }
   #main_menu article:hover .check_icone {
     width: 75px;
-    /*transform: translateX(0)?*/
-    transition: width 1s;
-    /*transform?*/ }
+    transition: width 1s; }
     #main_menu article:hover .check_icone i {
       transform: rotate(2turn);
       transition: transform 1s; }

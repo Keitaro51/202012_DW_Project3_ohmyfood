@@ -4,7 +4,7 @@ $primary_light:lighten($primary,5%);
 $secondary:#FF79DA;
 $secondary_light:lighten($secondary,5%);
 $tertiary:#99E2D0;
-$icon_color:#7E7E7E;
+$icon_color:#7E7E7E; /*grey icon*/
 $grey:#F6F6F6;
 $dish_label_height:65px;
 $iconfont:"Font Awesome 5 Free";
@@ -17,6 +17,19 @@ $iconfont:"Font Awesome 5 Free";
 }
 i{
 	color: $icon_color;
+}
+.fa-heart{
+	color: black;
+	cursor: pointer;
+	opacity: 0.3;
+	&:hover{
+		font-weight: 700;
+		background: linear-gradient($primary,$secondary);
+		background-clip: text;
+		-webkit-text-fill-color: transparent; /*voir compatibilité*/
+		opacity:1;
+		transition: opacity 3s;			
+	}
 }
 button{
 	padding:14px 18px;
@@ -31,9 +44,6 @@ button{
 		box-shadow:0 2px 5px darken(grey, 40%);
 	}
 	
-}
-.fa-heart{
-	color:$icon_color;
 }
 a{
 	text-decoration: none;
@@ -138,7 +148,6 @@ header{
 }
 .card{
 	position: relative;
-	width: 90%;
 	margin: 20px;
 	background: white;
 	border-radius: 15px;
@@ -156,11 +165,7 @@ header{
 		font-size: 25px;
 		bottom:15px;
 		right: 30px;
-		&:hover{
-			font-weight: 700;
-			color: $secondary;
-			transition: all 10s;
-		}
+		
 	}
 }
 .new{
@@ -227,14 +232,10 @@ footer{
 		width:90%;
 		margin: 0 20px 10px 20px;
 		padding-top: 30px;
-		
-		/*&::after{
-			content:"\f004";
-			color:$icon_color;
-			font-weight: 400;
-			font-family:$iconfont;
-			padding-left: 15%;
-		}*/
+		i{
+			float: right;
+			line-height: 38px;
+		}
 	}
 	
 	.underline{
@@ -274,10 +275,9 @@ footer{
 		.check_icone{
 			background:$tertiary;
 			height: $dish_label_height;
-			/*min-width:75px;*/
 			border-radius: 0 20px 20px 0;
-			width: 0; /*transform: translateX(175px)?*/
-			transition: width 1s;/*transform?*/
+			width: 0; 
+			transition: width 1s;
 			i{
 				font-size: 25px;
 				color: white;
@@ -288,8 +288,8 @@ footer{
 		}
 		&:hover {
 			.check_icone{
-				width: 75px;/*transform: translateX(0)?*/
-				transition: width 1s; /*transform?*/
+				width: 75px;
+				transition: width 1s;
 				i{
 					transform: rotate(2turn);
 					transition: transform 1s;
