@@ -2,6 +2,7 @@
 /*----------Global makecss----------*/
 /*--------------------Mobile design--------------------*/
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ button {
   background: linear-gradient(-10deg, #9356DC, #FF79DA);
   color: white;
   border: none;
+  -webkit-box-shadow: 0 2px 5px grey;
   box-shadow: 0 2px 5px grey;
   border-radius: 25px;
   font-size: 20px; }
@@ -32,10 +34,17 @@ h1 {
 
 header {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  margin: 20px; }
+  margin: 0 20px 20px 20px;
+  padding-top: 20px; }
   header img {
     height: 30px; }
   header i {
@@ -46,6 +55,7 @@ header {
 
 .location {
   background: #EAEAEA;
+  -webkit-box-shadow: 0 1px 1px grey inset;
   box-shadow: 0 1px 1px grey inset;
   padding: 10px 0 10px 0; }
   .location p {
@@ -74,6 +84,7 @@ header {
     height: 45px;
     background: #F6F6F6;
     border-radius: 18px;
+    -webkit-box-shadow: 0 6px 13px lightgrey;
     box-shadow: 0 6px 13px lightgrey;
     margin: 20px 5px 10px 5px;
     line-height: 45px; }
@@ -100,9 +111,11 @@ header {
       padding: 2px 6px 2px 6px; }
     .functioning p:hover {
       background: #F5EDFF;
+      -webkit-transition: background 1s;
       transition: background 1s; }
       .functioning p:hover::before {
         color: #9356DC;
+        -webkit-transition: color 1s;
         transition: color 1s; }
 
 .restaurants {
@@ -117,9 +130,17 @@ header {
   margin: 20px;
   background: white;
   border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-box-shadow: 0 6px 13px lightgrey;
   box-shadow: 0 6px 13px lightgrey; }
   .card img {
     border-radius: 15px 15px 0 0;
@@ -202,13 +223,20 @@ footer {
 #main_menu article {
   background: white;
   border-radius: 20px;
+  -webkit-box-shadow: 0 6px 13px lightgrey;
   box-shadow: 0 6px 13px lightgrey;
   width: 90%;
   height: 65px;
   margin: 20px auto 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end; }
   #main_menu article h3 {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     padding: 10px 10px 10px 10px;
     white-space: nowrap;
@@ -227,106 +255,145 @@ footer {
     height: 65px;
     border-radius: 0 20px 20px 0;
     width: 0;
+    -webkit-transition: width 1s;
     transition: width 1s; }
     #main_menu article .check_icone i {
       font-size: 0;
       color: white;
       margin-left: 25px;
       line-height: 65px;
+      -webkit-transition: font-size 1s;
       transition: font-size 1s; }
   #main_menu article:hover .check_icone {
     width: 75px;
+    -webkit-transition: width 1s;
     transition: width 1s; }
     #main_menu article:hover .check_icone i {
+      -webkit-transform: rotate(2turn);
       transform: rotate(2turn);
       font-size: 25px;
-      transition: transform 1s, font-size 1s; }
+      -webkit-transition: font-size 1s, -webkit-transform 1s;
+      transition: font-size 1s, -webkit-transform 1s;
+      transition: transform 1s, font-size 1s;
+      transition: transform 1s, font-size 1s, -webkit-transform 1s; }
 
 #main_menu button {
   padding: 10px 15px 10px 15px; }
 
 /*-----------------Loading spinner test----------------*/
-#spin {
+#loading {
   position: absolute;
   z-index: 1;
+  background: linear-gradient(45deg, #9356DC, #FF79DA);
+  color: #99E2D0;
   text-align: center;
-  background: white;
-  /*linear-gradient(45deg,$primary, $secondary)*/
-  opacity: 1;
-  /*à ajuster après finalisation animation*/
-  color: red;
+  padding-top: 310px;
+  opacity: 0.95;
   width: 100%;
   height: 100vh;
-  -webkit-animation: loading_spinner 5s both;
-  animation: loading_spinner 5s both; }
+  -webkit-animation: wait_for_it 0.1s 5s forwards;
+  animation: wait_for_it 0.1s 5s forwards; }
 
-@-webkit-keyframes loading_spinner {
-  to {
-    .logo {
-      transform: rotate(5turn) scale(1) translateY(-15px);
-      transition: transform 4s; }
-    .plate {
-      transform: rotate(5turn) scale(1);
-      transition: transform 4s; }
-    .fork {
-      opacity: 1;
-      transform: translateX(60px) translateY(-30px) scale(2) rotate(45deg);
-      transition: opacity 1s, transform 1s; }
-    .knife {
-      opacity: 1;
-      transform: translateX(-60px) translateY(-30px) scale(2) rotate(-45deg);
-      transition: opacity 1s, transform 1s; }
-    .splash {
-      transform: scale(1);
-      transition: transform 0s 5s; } } }
+@-webkit-keyframes wait_for_it {
+  100% {
+    -webkit-transform: translateY(-5000px);
+    transform: translateY(-5000px); } }
 
-@keyframes loading_spinner {
-  to {
-    .logo {
-      transform: rotate(5turn) scale(1) translateY(-15px);
-      transition: transform 4s; }
-    .plate {
-      transform: rotate(5turn) scale(1);
-      transition: transform 4s; }
-    .fork {
-      opacity: 1;
-      transform: translateX(60px) translateY(-30px) scale(2) rotate(45deg);
-      transition: opacity 1s, transform 1s; }
-    .knife {
-      opacity: 1;
-      transform: translateX(-60px) translateY(-30px) scale(2) rotate(-45deg);
-      transition: opacity 1s, transform 1s; }
-    .splash {
-      transform: scale(1);
-      transition: transform 0s 5s; } } }
-  #spin .fork {
+@keyframes wait_for_it {
+  100% {
+    -webkit-transform: translateY(-5000px);
+    transform: translateY(-5000px); } }
+  #loading .fork {
     position: absolute;
     top: 200px;
-    left: 100px;
-    opacity: 1;
-    /*à remettre à zéro après finalisation animation*/ }
-  #spin .knife {
-    position: absolute;
-    top: 200px;
-    left: 225px;
-    opacity: 1;
-    /*à remettre à zéro après finalisation animation*/ }
-  #spin .splash {
-    position: absolute;
-    top: 245px;
-    left: 170px;
+    left: calc(50% - 80px);
+    opacity: 0;
+    -webkit-transform: scale(1);
     transform: scale(1);
-    /*scale à remettre à zéro après finalisation animation*/ }
-  #spin .plate {
+    -webkit-animation: fork 2s forwards;
+    animation: fork 2s forwards; }
+
+@-webkit-keyframes fork {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(70px) translateY(-40px) scale(2) rotate(45deg);
+    transform: translateX(70px) translateY(-40px) scale(2) rotate(45deg); } }
+
+@keyframes fork {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(70px) translateY(-40px) scale(2) rotate(45deg);
+    transform: translateX(70px) translateY(-40px) scale(2) rotate(45deg); } }
+  #loading .knife {
     position: absolute;
     top: 200px;
-    left: 122px;
-    transform: rotate(0) scale(1);
-    /*scale à remettre à zéro après finalisation animation*/ }
-  #spin .logo {
+    left: calc(50% + 67px);
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation: knife 2s forwards;
+    animation: knife 2s forwards; }
+
+@-webkit-keyframes knife {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-70px) translateY(-40px) scale(2) rotate(-45deg);
+    transform: translateX(-70px) translateY(-40px) scale(2) rotate(-45deg); } }
+
+@keyframes knife {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-70px) translateY(-40px) scale(2) rotate(-45deg);
+    transform: translateX(-70px) translateY(-40px) scale(2) rotate(-45deg); } }
+  #loading .splash {
     position: absolute;
-    top: 245px;
-    left: 145px;
+    top: 230px;
+    left: 50%;
+    opacity: 0;
+    -webkit-animation: splash 0.1s 4s forwards;
+    animation: splash 0.1s 4s forwards; }
+
+@-webkit-keyframes splash {
+  to {
+    opacity: 1; } }
+
+@keyframes splash {
+  to {
+    opacity: 1; } }
+  #loading .plate {
+    position: absolute;
+    top: 190px;
+    left: calc(50% - 50px);
+    -webkit-transform: rotate(0) scale(0);
+    transform: rotate(0) scale(0);
+    -webkit-animation: plate 3s forwards;
+    animation: plate 3s forwards; }
+
+@-webkit-keyframes plate {
+  to {
+    -webkit-transform: rotate(4turn) scale(1);
+    transform: rotate(4turn) scale(1); } }
+
+@keyframes plate {
+  to {
+    -webkit-transform: rotate(4turn) scale(1);
+    transform: rotate(4turn) scale(1); } }
+  #loading .logo {
+    position: absolute;
+    top: 235px;
+    left: calc(50% - 28px);
     height: 10px;
-    transform: rotate(0) scale(1) translateY(0);
-    /*scale à remettre à zéro après finalisation animation*/ }
+    -webkit-transform: rotate(0) scale(0) translateY(0);
+    transform: rotate(0) scale(0) translateY(0);
+    -webkit-animation: logo 3s forwards;
+    animation: logo 3s forwards; }
+
+@-webkit-keyframes logo {
+  to {
+    -webkit-transform: rotate(4turn) scale(1) translateY(-15px);
+    transform: rotate(4turn) scale(1) translateY(-15px); } }
+
+@keyframes logo {
+  to {
+    -webkit-transform: rotate(4turn) scale(1) translateY(-15px);
+    transform: rotate(4turn) scale(1) translateY(-15px); } }

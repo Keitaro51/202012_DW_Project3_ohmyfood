@@ -40,7 +40,8 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 20px;
+	margin: 0 20px 20px 20px;
+	padding-top: 20px;
 	img{
 		height: 30px;
 	}
@@ -283,72 +284,85 @@ footer{
 }
 
 /*-----------------Loading spinner test----------------*/
-#spin{
-	@keyframes loading_spinner {
-		to{
-			.logo{
-				transform: rotate(5turn) scale(1) translateY(-15px);
-				transition: transform 4s;
-			}	
-			.plate{
-				transform: rotate(5turn) scale(1);
-				transition: transform 4s;
-			}
-			.fork{
-				opacity: 1;
-				transform: translateX(60px) translateY(-30px) scale(2) rotate(45deg);
-				transition: opacity 1s, transform 1s;
-			}	
-			.knife{
-				opacity: 1;
-				transform: translateX(-60px) translateY(-30px) scale(2) rotate(-45deg);
-				transition: opacity 1s, transform 1s;
-			}
-			.splash{
-				transform: scale(1);
-				transition: transform 0s 5s;
-			}
-		}
-	}
+#loading{
 	position: absolute;
 	z-index: 1;
-	text-align:center;
-	background: white; /*linear-gradient(45deg,$primary, $secondary)*/
-	opacity:1; /*à ajuster après finalisation animation*/
-	color:red;
+	background: linear-gradient(45deg,$primary, $secondary);
+	color:$tertiary;
+	text-align: center;
+	padding-top: 310px;	
+	opacity: 0.95;
 	width: 100%;
 	height:100vh;
-	animation: loading_spinner 5s both;
-
+	animation : wait_for_it 0.1s 5s forwards;
+	@keyframes wait_for_it{
+		100%{
+			transform:translateY(-5000px);
+		}
+	}	
 	.fork{
 		position: absolute;
 		top:200px;
-		left:100px;
-		opacity: 1; /*à remettre à zéro après finalisation animation*/
+		left:calc(50% - 80px);
+		opacity: 0;
+		transform: scale(1);
+		animation: fork 2s forwards;
+	}
+	@keyframes fork{
+		to{
+			opacity: 1;
+			transform: translateX(70px) translateY(-40px) scale(2) rotate(45deg);
+		}
 	}
 	.knife{
 		position: absolute;
 		top:200px;
-		left:225px;
-		opacity: 1;/*à remettre à zéro après finalisation animation*/
+		left:calc(50% + 67px);
+		opacity: 0;
+		transform: scale(1);
+		animation: knife 2s forwards;
+	}
+	@keyframes knife{
+		to{
+			opacity: 1;
+			transform: translateX(-70px) translateY(-40px) scale(2) rotate(-45deg);
+		}
 	}
 	.splash{
 		position: absolute;
-		top: 245px;
-		left:170px;
-		transform: scale(1);/*scale à remettre à zéro après finalisation animation*/
+		top:230px;
+		left:50%;
+		opacity: 0;
+		animation: splash 0.1s 4s forwards;
+	}
+	@keyframes splash{
+		to{
+			opacity: 1;
+		}
 	}
 	.plate{
 		position: absolute;
-		top:200px;
-		left:122px;	
-		transform: rotate(0) scale(1);/*scale à remettre à zéro après finalisation animation*/
+		top:190px;
+		left:calc(50% - 50px);
+		transform: rotate(0) scale(0);
+		animation : plate 3s forwards;
+	}
+	@keyframes plate{
+		to{
+			transform: rotate(4turn) scale(1);
+		}
 	}
 	.logo{
 		position: absolute;
-		top:245px;
-		left:145px;
+		top:235px;
+		left:calc(50% - 28px);
 		height:10px;
-		transform: rotate(0) scale(1) translateY(0);/*scale à remettre à zéro après finalisation animation*/
+		transform: rotate(0) scale(0) translateY(0);
+		animation: logo 3s forwards;
+	}
+	@keyframes logo {
+		to{
+			transform: rotate(4turn) scale(1) translateY(-15px);
+		}
 	}
 }
