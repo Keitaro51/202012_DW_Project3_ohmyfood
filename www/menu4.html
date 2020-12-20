@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Romain Charlot">
 	<meta name="description" content="Projet 3 de la formation Developpeur Web Openclassrooms 2020 - Intégration de la maquette responsive du site multipages Ohmyfood en utilisant SCSS  et dynamiation du site à l'aide d'animations css - Page menu Le délice des sens">
-	<link rel="shortcut icon" href="images/logo/reservia.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="images/logo/ohmyfood@2x.svg" type="image/x-icon">
 	<!--Mobile viewport fix-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<!--Fonts-->
@@ -22,71 +22,84 @@
 	</header>
 
 	<!--Main content-->
-	<main>
-		<img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant Le déclice des sens"/>
+	<main id="main_menu">
+		<div class="hero hero_menu4"></div>
+		<div class="menu">
+			<h1>Le délice des sens<i class="far fa-heart"></i></h1>
 
-		<h1>Le délice des sens</h1><i class="far fa-heart"></i>
+			<!--Starter-->
+			<section>
+				<h2 class="anim"><span class="underline">Entr</span>ées</h2>
+				<article class="anim anim1">
+					<h3>Tartare de thon</br><span class="dish_compo">Assaisonné au yuzu</span></h3>
+					<div class="price">25€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim2">
+					<h3>Bouchée de homard croustillant</br><span class="dish_compo">Et sa farandole de petits légumes</span></h3>
+					<div class="price">35€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim3">
+					<h3>Velouté de cèpes </br><span class="dish_compo">Aux truffes</span></h3>
+					<div class="price">20€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+			</section>
 
-		<!--starter-->
-		<section>
-			<h2><span>Entr</span>ées</h2>
-			<article>
-				<h3>Tartare de thon</h3>
-				<p>Assaisonné au yuzu<strong>25€</strong></p>
-			</article>
-			<article>
-				<h3>Bouchée de homard croustillant</h3>
-				<p>Et sa farandole de petits légumes<strong>35€</strong></p>
-			</article>
-			<article>
-				<h3>Velouté de cèpes </h3>
-				<p>Aux truffes<strong>20€</strong></p>
-			</article>
-		</section>
+			<!--Main dish-->
+			<section>
+				<h2 class="anim"><span class="underline">Plat</span>s</h2>
+				<article class="anim anim1">
+					<h3>Poulet rôti aux herbes de Provence</br><span class="dish_compo">Et sa crème de truffe</span></h3>
+					<div class="price">40€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim2">
+					<h3>Langouste rôtie </br><span class="dish_compo">Et ses légumes de saison</span></h3>
+					<div class="price">35€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim3">
+					<h3>Côte de boeuf Angus </br><span class="dish_compo">Et sa purée de panais</span></h3>
+					<div class="price">44€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+			</section>
 
-		<!--main-->
-		<section>
-			<h2><span>Plat</span>s</h2>
-			<article>
-				<h3>Poulet rôti aux herbes de Provence </h3>
-				<p>Et sa crème de truffe<strong>40€</strong></p>
-			</article>
-			<article>
-				<h3>Langouste rôtie </h3>
-				<p>Et ses légumes de saison<strong>35€</strong></p>
-			</article>
-			<article>
-				<h3>Côte de boeuf Angus </h3>
-				<p>Et sa purée de panais<strong>44€</strong></p>
-			</article>
-		</section>
-
-		<!--Dessert-->
-		<section>
-			<h2><span>Dess</span>erts</h2>
-			<article>
-				<h3>Farandole de desserts</h3>
-				<p>Du chef<strong>18€</strong></p>
-			</article>
-			<article>
-				<h3>Crème brulée </h3>
-				<p>Revisitée<strong>22€</strong></p>
-			</article>
-			<article>
-				<h3>Tiramisu </h3>
-				<p>À la noisette<strong>23€</strong></p>
-			</article>			
-			
-		</section>
+			<!--Dessert-->
+			<section>
+				<h2 class="anim"><span class="underline">Dess</span>erts</h2>
+				<article class="anim anim1">
+					<h3>Farandole de desserts</br><span class="dish_compo">Farandole de desserts</span></h3>
+					<div class="price">18€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim2">
+					<h3>Crème brulée</br><span class="dish_compo">Revisitée</span></h3>
+					<div class="price">22€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim3">
+					<h3>Tiramisu</br><span class="dish_compo">À la noisette</span></h3>
+					<div class="price">23€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>			
+			</section>
+			<button type="button">Commander</button>
+		</div>
 	</main>
 
 	<!--Footer-->
 	<footer>
-		<h2>ohmyfood</h2>
-		<a href="#"><i class="fas fa-utensils"></i> Proposer un restaurant</a>
-		<a href="#"><i class="fas fa-hands-helping"></i> Devenir partenaire</a>
-		<a href="#">Mentions légales</a>
-		<a href="mailto:contact@ohmyfood.fr">Contact</a>
+		<nav>
+			<h2>ohmyfood</h2>
+			<a href="#"><i class="fas fa-utensils"></i> Proposer un restaurant</a>
+			<a href="#"><i class="fas fa-hands-helping"></i> Devenir partenaire</a>
+			<a href="#">Mentions légales</a>
+			<a href="mailto:contact@ohmyfood.fr">Contact</a>
+		</nav>
 	</footer>
 </body>
 </html>
+

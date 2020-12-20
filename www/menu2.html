@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Romain Charlot">
 	<meta name="description" content="Projet 3 de la formation Developpeur Web Openclassrooms 2020 - Intégration de la maquette responsive du site multipages Ohmyfood en utilisant SCSS  et dynamiation du site à l'aide d'animations css - Page menu La note enchantée">
-	<link rel="shortcut icon" href="images/logo/reservia.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="images/logo/ohmyfood@2x.svg" type="image/x-icon">
 	<!--Mobile viewport fix-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<!--Fonts-->
@@ -22,75 +22,89 @@
 	</header>
 
 	<!--Main content-->
-	<main>
-		<img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Restaurant La note enchantée"/>
+	<main id="main_menu">
+		<div class="hero hero_menu2"></div>
+		<div class="menu">
+			<h1>La note enchantée<i class="far fa-heart"></i></h1>
 
-		<h1>La note enchantée</h1><i class="far fa-heart"></i>
+			<!--Starter-->
+			<section>
+				<h2 class="anim"><span class="underline">Entr</span>ées</h2>
+				<article class="anim anim1">
+					<h3>Ravioles de foie gras</br><span class="dish_compo">Accompagnés de leur crème à la truffe</span></h3>
+					<div class="price">25€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim2">
+					<h3>Caviar osciètre</br><span class="dish_compo">Sur blini à la farine de blé noir</span></h3>
+					<div class="price">35€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim3">
+					<h3>Homard et espuma de potiron</br><span class="dish_compo">Mariné aux zestes d'orange</span></h3>
+					<div class="price">20€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim3">
+					<h3>Foie gras de canard cuit entier</br><span class="dish_compo">Confiture de figue et pain toasté</span></h3>
+					<div class="price">35€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+			</section>
 
-		<!--starter-->
-		<section>
-			<h2><span>Entr</span>ées</h2>
-			<article>
-				<h3>Ravioles de foie gras</h3>
-				<p>Accompagnés de leur crème à la truffe<strong>25€</strong></p>
-			</article>
-			<article>
-				<h3>Caviar osciètre </h3>
-				<p>Sur blini à la farine de blé noir<strong>35€</strong></p>
-			</article>
-			<article>
-				<h3>Homard et espuma de potiron</h3>
-				<p>Mariné aux zestes d'orange<strong>20€</strong></p>
-			</article>
-			<article>
-				<h3>Foie gras de canard cuit entier</h3>
-				<p>Confiture de figue et pain toasté<strong>35€</strong></p>
-			</article>
-		</section>
+			<!--Main dish-->
+			<section>
+				<h2 class="anim"><span class="underline">Plat</span>s</h2>
+				<article class="anim anim1">
+					<h3>Noix de coquilles Saint-Jacques</br><span class="dish_compo">Sur lit de purée de céleri-rave</span></h3>
+					<div class="price">40€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim2">
+					<h3>Langoustine poêlée</br><span class="dish_compo">Purée de patate douce</span></h3>
+					<div class="price">35€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim3">
+					<h3>Mijoté de queue de boeuf</br><span class="dish_compo">Et riz sauvage aux zestes de citron</span></h3>
+					<div class="price">44€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+			</section>
 
-		<!--main-->
-		<section>
-			<h2><span>Plat</span>s</h2>
-			<article>
-				<h3>Noix de coquilles Saint-Jacques</h3>
-				<p>Sur lit de purée de céleri-rave<strong>40€</strong></p>
-			</article>
-			<article>
-				<h3>Langoustine poêlée</h3>
-				<p>Purée de patate douce<strong>35€</strong></p>
-			</article>
-			<article>
-				<h3>Mijoté de queue de boeuf</h3>
-				<p>Et riz sauvage aux zestes de citron<strong>44€</strong></p>
-			</article>
-		</section>
-
-		<!--Dessert-->
-		<section>
-			<h2><span>Dess</span>erts</h2>
-			<article>
-				<h3>Macaron noisette et chocolat</h3>
-				<p>Glace au caramel brun et sel de Guérande<strong>18€</strong></p>
-			</article>
-			<article>
-				<h3>Baba au rhum revisité </h3>
-				<p>Avec son coulis de citron<strong>22€</strong></p>
-			</article>
-			<article>
-				<h3>Tarte au citron meringuée</h3>
-				<p>Déstructurée<strong>23€</strong></p>
-			</article>			
-			
-		</section>
+			<!--Dessert-->
+			<section>
+				<h2 class="anim"><span class="underline">Dess</span>erts</h2>
+				<article class="anim anim1">
+					<h3>Macaron noisette et chocolat</br><span class="dish_compo">Glace au caramel brun et sel de Guérande</span></h3>
+					<div class="price">18€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim2">
+					<h3>Baba au rhum revisité</br><span class="dish_compo">Avec son coulis de citron</span></h3>
+					<div class="price">22€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>
+				<article class="anim anim3">
+					<h3>Tarte au citron meringuée</br><span class="dish_compo">Déstructurée</span></h3>
+					<div class="price">23€</div>
+					<div class="check_icone"><i class="fas fa-check-circle"></i></div>
+				</article>			
+			</section>
+			<button type="button">Commander</button>
+		</div>
 	</main>
 
 	<!--Footer-->
 	<footer>
-		<h2>ohmyfood</h2>
-		<a href="#"><i class="fas fa-utensils"></i> Proposer un restaurant</a>
-		<a href="#"><i class="fas fa-hands-helping"></i> Devenir partenaire</a>
-		<a href="#">Mentions légales</a>
-		<a href="mailto:contact@ohmyfood.fr">Contact</a>
+		<nav>
+			<h2>ohmyfood</h2>
+			<a href="#"><i class="fas fa-utensils"></i> Proposer un restaurant</a>
+			<a href="#"><i class="fas fa-hands-helping"></i> Devenir partenaire</a>
+			<a href="#">Mentions légales</a>
+			<a href="mailto:contact@ohmyfood.fr">Contact</a>
+		</nav>
 	</footer>
 </body>
 </html>
+

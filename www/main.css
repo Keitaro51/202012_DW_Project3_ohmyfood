@@ -3,6 +3,7 @@
 /*grey icon*/
 /*--------------------Mobile design--------------------*/
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -17,11 +18,13 @@ i {
   opacity: 0.3; }
   .fa-heart:hover {
     font-weight: 700;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
     background: linear-gradient(#9356DC, #FF79DA);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
+    -webkit-transition: opacity 3s;
     transition: opacity 3s; }
 
 button {
@@ -29,11 +32,13 @@ button {
   background: linear-gradient(-10deg, #9356DC, #FF79DA);
   color: white;
   border: none;
+  -webkit-box-shadow: 0 2px 5px grey;
   box-shadow: 0 2px 5px grey;
   border-radius: 25px;
   font-size: 20px; }
   button:hover {
     background: linear-gradient(-10deg, #a16be0, #ff93e1);
+    -webkit-box-shadow: 0 2px 5px #1a1a1a;
     box-shadow: 0 2px 5px #1a1a1a; }
 
 a {
@@ -49,8 +54,14 @@ h1 {
 
 header {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 20px; }
   header img {
@@ -63,6 +74,7 @@ header {
 
 .location {
   background: #EAEAEA;
+  -webkit-box-shadow: 0 1px 1px grey inset;
   box-shadow: 0 1px 1px grey inset;
   padding: 10px 0 10px 0;
   text-align: center; }
@@ -95,6 +107,7 @@ header {
     height: 45px;
     background: #F6F6F6;
     border-radius: 18px;
+    -webkit-box-shadow: 0 6px 13px lightgrey;
     box-shadow: 0 6px 13px lightgrey;
     margin: 20px 5px 10px 5px;
     line-height: 45px; }
@@ -113,9 +126,11 @@ header {
       margin: 0 15px 0 35px; }
     .functioning p:hover {
       background: #F5EDFF;
+      -webkit-transition: background 1s;
       transition: background 1s; }
       .functioning p:hover i {
         color: #9356DC;
+        -webkit-transition: color 1s;
         transition: color 1s; }
 
 .restaurants {
@@ -129,9 +144,17 @@ header {
   margin: 20px;
   background: white;
   border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-box-shadow: 0 6px 13px lightgrey;
   box-shadow: 0 6px 13px lightgrey; }
   .card img {
     border-radius: 15px 15px 0 0;
@@ -182,13 +205,24 @@ footer {
   background-size: cover; }
   #main_menu .hero_menu1 {
     background-image: url("images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"); }
+  #main_menu .hero_menu2 {
+    background-image: url("images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"); }
+  #main_menu .hero_menu3 {
+    background-image: url("images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"); }
+  #main_menu .hero_menu4 {
+    background-image: url("images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"); }
 
 #main_menu .menu {
   margin-top: -30px;
   width: 100%;
   background: #F6F6F6;
   border-radius: 20px 20px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
   #main_menu .menu button {
     margin: 50px auto 50px auto; }
@@ -214,12 +248,17 @@ footer {
 #main_menu article {
   background: white;
   border-radius: 20px;
+  -webkit-box-shadow: 0 6px 13px lightgrey;
   box-shadow: 0 6px 13px lightgrey;
   height: 65px;
   margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden; }
   #main_menu article h3 {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     padding: 10px 10px 10px 10px;
     white-space: nowrap;
@@ -238,28 +277,37 @@ footer {
     height: 65px;
     border-radius: 0 20px 20px 0;
     width: 0;
+    -webkit-transition: width 1s;
     transition: width 1s; }
     #main_menu article .check_icone i {
       font-size: 25px;
       color: white;
       margin-left: 25px;
       line-height: 65px;
+      -webkit-transition: font-size 1s;
       transition: font-size 1s; }
   #main_menu article:hover .check_icone {
     width: 75px;
+    -webkit-transition: width 1s;
     transition: width 1s; }
     #main_menu article:hover .check_icone i {
+      -webkit-transform: rotate(2turn);
       transform: rotate(2turn);
-      transition: transform 1s; }
+      -webkit-transition: -webkit-transform 1s;
+      transition: -webkit-transform 1s;
+      transition: transform 1s;
+      transition: transform 1s, -webkit-transform 1s; }
 
 @-webkit-keyframes anime_menu {
   from {
     opacity: 0;
+    -webkit-transform: translateY(30px);
     transform: translateY(30px); } }
 
 @keyframes anime_menu {
   from {
     opacity: 0;
+    -webkit-transform: translateY(30px);
     transform: translateY(30px); } }
 
 #main_menu .anim, #main_menu h2 {
