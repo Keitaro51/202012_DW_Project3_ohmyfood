@@ -206,6 +206,7 @@ header{
 }
 .restaurants{
 	background: $grey;
+	padding-bottom: 30px;
 	@include tab_only{
 		display:flex;
 		flex-wrap: wrap;
@@ -231,7 +232,6 @@ header{
 	background: white;
 	border-radius: 15px;
 	box-shadow: 0 6px 13px lightgrey;
-	
 	img{
 		border-radius: 15px 15px 0 0;
 		width:100%;
@@ -242,7 +242,6 @@ header{
 		font-size: 25px;
 		bottom:15px;
 		right: 30px;
-		
 	}
 }
 .new{
@@ -262,7 +261,18 @@ header{
 		font-size: 16px;
 	}
 }
+body{ /*for sticky footer*/
+	position: relative;
+	min-height:100%;
+	padding-bottom:210px;
+	@include tab{
+		padding-bottom:110px;
+	}
+}
 footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
 	background: #353535;
 	padding-bottom: 30px;
 	nav:not(h2){
@@ -356,6 +366,7 @@ footer{
 		overflow:hidden;
 		@include tab{
 			display: inline-flex;
+			width:400px;
 		}		
 		h3{
 			flex-grow:1;
@@ -418,97 +429,97 @@ footer{
 	}
 }
 
-// /*-----------------Loading spinner----------------*/
-// .scroll{ 
-// 	animation: no_scroll 0.1s 5s both; /*disable parent scroll during loading*/
-// 	overflow-y:hidden;
+/*-----------------Loading spinner----------------*/
+.scroll{ 
+	animation: no_scroll 0.1s 5s both; /*disable parent scroll during loading*/
+	overflow-y:hidden;
 
-// 	@keyframes no_scroll{
-// 		100%{
-// 			overflow-y:auto;
-// 		}
-// 	}
-// }
-// #loading{
-// 	position: absolute;
-// 	overflow-y: hidden;
-// 	z-index: 1;
-// 	background: linear-gradient(45deg,$primary, $secondary);
-// 	color:$tertiary;
-// 	text-align: center;
-// 	padding-top: 310px;	
-// 	opacity: 0.95;
-// 	width: 100%;
-// 	height:100vh;
-// 	animation : wait_for_it 0.1s 5s forwards; /*hide loading screen after anim*/
-// 	@keyframes wait_for_it{
-// 		100%{
-// 			transform:translateY(-5000px);
-// 		}
-// 	}
-// 	.fork{
-// 		position: absolute;
-// 		top:200px;
-// 		left:calc(50% - 80px);
-// 		opacity: 0;
-// 		transform: scale(1);
-// 		animation: fork 2s forwards;
-// 	}
-// 	@keyframes fork{
-// 		to{
-// 			opacity: 1;
-// 			transform: translateX(70px) translateY(-40px) scale(2) rotate(45deg);
-// 		}
-// 	}
-// 	.knife{
-// 		position: absolute;
-// 		top:200px;
-// 		left:calc(50% + 67px);
-// 		opacity: 0;
-// 		transform: scale(1);
-// 		animation: knife 2s forwards;
-// 	}
-// 	@keyframes knife{
-// 		to{
-// 			opacity: 1;
-// 			transform: translateX(-70px) translateY(-40px) scale(2) rotate(-45deg);
-// 		}
-// 	}
-// 	.splash{
-// 		position: absolute;
-// 		top:230px;
-// 		left:50%;
-// 		opacity: 0;
-// 		animation: splash 0.1s 4s forwards;
-// 	}
-// 	@keyframes splash{
-// 		to{
-// 			opacity: 1;
-// 		}
-// 	}
-// 	.plate{
-// 		position: absolute;
-// 		top:190px;
-// 		left:calc(50% - 50px);
-// 		transform: rotate(0) scale(0);
-// 		animation : plate 3s forwards;
-// 	}
-// 	@keyframes plate{
-// 		to{
-// 			transform: rotate(4turn) scale(1);
-// 		}
-// 	}
-// 	.logo{
-// 		position: absolute;
-// 		top:235px;
-// 		left:calc(50% - 28px);
-// 		height:10px;
-// 		transform: rotate(0) scale(0) translateY(0);
-// 		animation: logo 3s forwards;
-// 	}
-// 	@keyframes logo {
-// 		to{
-// 			transform: rotate(4turn) scale(1) translateY(-15px);
-// 		}
-// 	}
-// }
+	@keyframes no_scroll{
+		100%{
+			overflow-y:auto;
+		}
+	}
+}
+#loading{
+	position: absolute;
+	overflow-y: hidden;
+	z-index: 1;
+	background: linear-gradient(45deg,$primary, $secondary);
+	color:$tertiary;
+	text-align: center;
+	padding-top: 310px;	
+	opacity: 0.95;
+	width: 100%;
+	height:100vh;
+	animation : wait_for_it 0.1s 5s forwards; /*hide loading screen after anim*/
+	@keyframes wait_for_it{
+		100%{
+			transform:translateY(-5000px);
+		}
+	}
+	.fork{
+		position: absolute;
+		top:200px;
+		left:calc(50% - 80px);
+		opacity: 0;
+		transform: scale(1);
+		animation: fork 2s forwards;
+	}
+	@keyframes fork{
+		to{
+			opacity: 1;
+			transform: translateX(70px) translateY(-40px) scale(2) rotate(45deg);
+		}
+	}
+	.knife{
+		position: absolute;
+		top:200px;
+		left:calc(50% + 67px);
+		opacity: 0;
+		transform: scale(1);
+		animation: knife 2s forwards;
+	}
+	@keyframes knife{
+		to{
+			opacity: 1;
+			transform: translateX(-70px) translateY(-40px) scale(2) rotate(-45deg);
+		}
+	}
+	.splash{
+		position: absolute;
+		top:230px;
+		left:50%;
+		opacity: 0;
+		animation: splash 0.1s 4s forwards;
+	}
+	@keyframes splash{
+		to{
+			opacity: 1;
+		}
+	}
+	.plate{
+		position: absolute;
+		top:190px;
+		left:calc(50% - 50px);
+		transform: rotate(0) scale(0);
+		animation : plate 3s forwards;
+	}
+	@keyframes plate{
+		to{
+			transform: rotate(4turn) scale(1);
+		}
+	}
+	.logo{
+		position: absolute;
+		top:235px;
+		left:calc(50% - 28px);
+		height:10px;
+		transform: rotate(0) scale(0) translateY(0);
+		animation: logo 3s forwards;
+	}
+	@keyframes logo {
+		to{
+			transform: rotate(4turn) scale(1) translateY(-15px);
+		}
+	}
+}
