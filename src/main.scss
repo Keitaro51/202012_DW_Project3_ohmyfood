@@ -1,4 +1,4 @@
-/*----------Global makecss----------*/
+/*----------Variables----------*/
 $primary:#9356DC;
 $primary_light:lighten($primary,5%);
 $secondary:#FF79DA;
@@ -8,6 +8,21 @@ $icon_color:#7E7E7E; /*grey icon*/
 $grey:#F6F6F6;
 $dish_label_height:65px;
 $iconfont:"Font Awesome 5 Free";
+/*----------Responsive----------*/
+$breakpoints: (
+  tab: 750px,
+  desktop:1024px
+);
+@mixin tab{
+	@media screen and (min-width:map-get($breakpoints, tab)) {
+		@content;
+	}
+}
+@mixin desktop{
+	@media screen and (min-width:map-get($breakpoints, desktop)) {
+		@content;
+	}
+}
 /*--------------------Mobile design--------------------*/
 *{
 	box-sizing: border-box;
