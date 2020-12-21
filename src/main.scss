@@ -13,13 +13,18 @@ $breakpoints: (
   tab: 750px,
   desktop:1024px
 );
-@mixin tab{
+@mixin tab{ /* media query from tab, inherited by desktop*/
 	@media screen and (min-width:map-get($breakpoints, tab)) {
 		@content;
 	}
 }
-@mixin desktop{
+@mixin desktop{ /*media query from desktop to infinity(, and beyond! "Buzz Linghtning 1995 ")*/
 	@media screen and (min-width:map-get($breakpoints, desktop)) {
+		@content;
+	}
+}
+@mixin tab_only{ /* media query for tab only, without transmission to desktop*/
+	@media screen and (min-width:map-get($breakpoints, tab)) and (max-width:map-get($breakpoints, desktop)) {
 		@content;
 	}
 }
@@ -87,7 +92,7 @@ header{
 		color: black;
 	}
 }
-main{
+#main_index{
 	@include desktop{
 		display: grid;
 		grid-template-columns: 340px 1fr;
@@ -201,14 +206,20 @@ main{
 }
 .restaurants{
 	background: $grey;
+	@include tab_only{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 	h1{
 		padding: 20px 0 0 20px;
 		margin:0 0 20px 0;
+		width: 100%;
 		~ .card{
 			@include tab{
 				display: inline-flex;
 				img{
-					width: 300px;
+					width: 335px;
 				}								
 			}	
 		}
