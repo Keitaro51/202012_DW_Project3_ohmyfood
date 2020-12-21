@@ -325,9 +325,20 @@ footer{
 	}
 }
 
-/*-----------------Loading spinner test----------------*/
+/*-----------------Loading spinner----------------*/
+.scroll{ 
+	animation: no_scroll 0.1s 5s both; /*disable parent scroll during loading*/
+	overflow-y:hidden;
+
+	@keyframes no_scroll{
+		100%{
+			overflow-y:auto;
+		}
+	}
+}
 #loading{
 	position: absolute;
+	overflow-y: hidden;
 	z-index: 1;
 	background: linear-gradient(45deg,$primary, $secondary);
 	color:$tertiary;
@@ -336,12 +347,12 @@ footer{
 	opacity: 0.95;
 	width: 100%;
 	height:100vh;
-	animation : wait_for_it 0.1s 5s forwards;
+	animation : wait_for_it 0.1s 5s forwards; /*hide loading screen after anim*/
 	@keyframes wait_for_it{
 		100%{
 			transform:translateY(-5000px);
 		}
-	}	
+	}
 	.fork{
 		position: absolute;
 		top:200px;
