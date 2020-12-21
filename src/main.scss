@@ -326,6 +326,7 @@ footer{
 		button{
 			margin:50px auto 50px auto;
 		}
+		
 	}
 	h1{
 		font-family: shrikhand, sans-serif;
@@ -338,7 +339,6 @@ footer{
 			line-height: 38px;
 		}
 	}
-	
 	.underline{
 		border-bottom: $tertiary solid 4px; /*partial title underline*/
 	}
@@ -354,14 +354,15 @@ footer{
 		margin:20px;
 		display: flex;
 		overflow:hidden;
-		
+		@include tab{
+			display: inline-flex;
+		}		
 		h3{
 			flex-grow:1;
 			padding:10px 10px 10px 10px;
 			white-space: nowrap;
   			overflow: hidden;
 			text-overflow : ellipsis;
-			
 		}
 		.dish_compo{
 			font-weight: 400;
