@@ -4,7 +4,7 @@ $primary_light:lighten($primary,5%);
 $secondary:#FF79DA;
 $secondary_light:lighten($secondary,5%);
 $tertiary:#99E2D0;
-$icon_color:#7E7E7E; /*grey icon*/
+$icon_color:#7E7E7E;
 $grey:#F6F6F6;
 $dish_label_height:65px;
 $iconfont:"Font Awesome 5 Free";
@@ -163,6 +163,9 @@ header{
 .functioning{
 	margin:40px 20px 50px 20px;
 	font-weight: 700;
+	@include desktop{
+		border-right:solid $grey 2px;
+	}
 	h1{
 		margin-bottom: 20px;
 	}
@@ -416,9 +419,9 @@ footer{
 			transform: translateY(30px);
 		}
 	}
-	.anim, h2{
+	.anim{
 		animation:anime_menu 2s both; /*avaible only if 4 dish max in each section - please adapt if more*/
-		@for $i from 0 through 4 {
+		@for $i from 1 through 4 {
             &#{$i} {
                 animation-delay: 400ms * $i;
              }

@@ -1,5 +1,4 @@
 /*----------Variables----------*/
-/*grey icon*/
 /*----------Responsive----------*/
 /*--------------------Index page--------------------*/
 * {
@@ -137,7 +136,11 @@ header {
 
 .functioning {
   margin: 40px 20px 50px 20px;
-  font-weight: 700; }
+  font-weight: 700;
+  /*media query from desktop to infinity(, and beyond! "Buzz Linghtning 1995 ")*/ }
+  @media screen and (min-width: 1024px) {
+    .functioning {
+      border-right: solid #F6F6F6 2px; } }
   .functioning h1 {
     margin-bottom: 20px; }
   .functioning p {
@@ -410,23 +413,20 @@ footer {
     -webkit-transform: translateY(30px);
     transform: translateY(30px); } }
 
-#main_menu .anim, #main_menu h2 {
+#main_menu .anim {
   -webkit-animation: anime_menu 2s both;
   animation: anime_menu 2s both;
   /*avaible only if 4 dish max in each section - please adapt if more*/ }
-  #main_menu .anim0, #main_menu h20 {
-    -webkit-animation-delay: 0ms;
-    animation-delay: 0ms; }
-  #main_menu .anim1, #main_menu h21 {
+  #main_menu .anim1 {
     -webkit-animation-delay: 400ms;
     animation-delay: 400ms; }
-  #main_menu .anim2, #main_menu h22 {
+  #main_menu .anim2 {
     -webkit-animation-delay: 800ms;
     animation-delay: 800ms; }
-  #main_menu .anim3, #main_menu h23 {
+  #main_menu .anim3 {
     -webkit-animation-delay: 1200ms;
     animation-delay: 1200ms; }
-  #main_menu .anim4, #main_menu h24 {
+  #main_menu .anim4 {
     -webkit-animation-delay: 1600ms;
     animation-delay: 1600ms; }
 
