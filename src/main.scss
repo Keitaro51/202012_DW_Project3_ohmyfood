@@ -45,7 +45,7 @@ i{
 	&:hover{
 		font-weight: 700;
 		background: linear-gradient($primary,$secondary);
-		background-clip: text;
+		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		opacity:1;
 		transition: opacity 3s;			
@@ -461,6 +461,7 @@ footer{
 		position: absolute;
 		top:200px;
 		left:calc(50% - 80px);
+		height:100px;
 		opacity: 0;
 		transform: scale(1);
 		animation: fork 2s forwards;
@@ -475,6 +476,7 @@ footer{
 		position: absolute;
 		top:200px;
 		left:calc(50% + 67px);
+		height:100px;
 		opacity: 0;
 		transform: scale(1);
 		animation: knife 2s forwards;
@@ -489,6 +491,7 @@ footer{
 		position: absolute;
 		top:230px;
 		left:50%;
+		height:40px;
 		opacity: 0;
 		animation: splash 0.1s 4s forwards;
 	}
@@ -501,6 +504,7 @@ footer{
 		position: absolute;
 		top:190px;
 		left:calc(50% - 50px);
+		height:100px;
 		transform: rotate(0) scale(0);
 		animation : plate 3s forwards;
 	}

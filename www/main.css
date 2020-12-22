@@ -21,7 +21,6 @@ i {
     background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
     background: linear-gradient(#9356DC, #FF79DA);
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
     -webkit-transition: opacity 3s;
@@ -477,6 +476,7 @@ footer {
     position: absolute;
     top: 200px;
     left: calc(50% - 80px);
+    height: 100px;
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -498,6 +498,7 @@ footer {
     position: absolute;
     top: 200px;
     left: calc(50% + 67px);
+    height: 100px;
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -519,6 +520,7 @@ footer {
     position: absolute;
     top: 230px;
     left: 50%;
+    height: 40px;
     opacity: 0;
     -webkit-animation: splash 0.1s 4s forwards;
     animation: splash 0.1s 4s forwards; }
@@ -534,6 +536,7 @@ footer {
     position: absolute;
     top: 190px;
     left: calc(50% - 50px);
+    height: 100px;
     -webkit-transform: rotate(0) scale(0);
     transform: rotate(0) scale(0);
     -webkit-animation: plate 3s forwards;
