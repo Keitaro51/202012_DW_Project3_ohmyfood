@@ -1,9 +1,4 @@
 # Specify filepatterns you want git to ignore.
-maquettes/
-*.pdf
-*.txt
 *.log
-*.json
-gulpfile.js
 node_modules
 
